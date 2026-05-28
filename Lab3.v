@@ -6,10 +6,9 @@ module Lab3 (
 );
 
     reg [1:0] sw_sync;
-    // Sửa posedge rst thành negedge rst (bắt sườn xuống khi bấm nút reset)
     always @(posedge clk or negedge rst) begin
-        if (rst==1'b0) begin // Sửa rst thành !rst (khi nút bị kéo xuống 0)
-            sw_sync <= 2'b11; // Nên khởi tạo sw_sync là 2'b11 vì idle của Active-Low là 1
+        if (rst==1'b0) begin
+            sw_sync <= 2'b11;
             led     <= 1'b0;
         end else begin
             sw_sync <= {sw_sync[0], sw};
