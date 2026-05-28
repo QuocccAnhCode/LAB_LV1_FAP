@@ -4,7 +4,7 @@ module Lab4(
     input sw,
     output reg led
 );
-    parameter MAX_CNT = 10;
+    parameter MAX_CNT = 500_000;
     reg [23:0] cnt;
     reg sw_last;
     reg sw_stable;
