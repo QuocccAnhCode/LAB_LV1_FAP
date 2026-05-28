@@ -24,11 +24,11 @@ module tb_Lab4; // Đổi tên module testbench cho đồng bộ với Lab4
     initial begin
         // --- Khởi tạo ban đầu ---
         clk = 0;
-        rst = 1;
+        rst = 0;
         sw = 0;
         #20;
         
-        rst = 0; // Tắt reset, mạch bắt đầu hoạt động ổn định
+        rst = 1; // Tắt reset, mạch bắt đầu hoạt động ổn định
         #20;
 
         // --- MÔ PHỎNG HÀNH VI NHẤN NÚT (Đã tính toán thời gian trễ) ---
