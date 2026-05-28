@@ -2,19 +2,19 @@ module Lab4(
     input clk,
     input rst,
     input sw,
-    output led
+    output reg led
 );
-    parameter MAX_CNT = 500_000;
+    parameter MAX_CNT = 10;
     reg [23:0] cnt;
     reg sw_last;
     reg sw_stable;
     
     always @(posedge clk or negedge rst) begin
-        if(rst=1'b0) begin
+        if(rst == 1'b0) begin
             cnt <= 0;
             sw_last <= 1'b1;
             sw_stable <= 1'b1;
-        end
+        end         
         else begin
             if(sw != sw_last) begin
                 cnt <= 0;
@@ -32,7 +32,7 @@ module Lab4(
 
     reg sw_stable_current;
     always @(posedge clk or negedge rst) begin
-        if(rst=1'b0) begin
+        if(rst == 1'b0) begin
             led <= 1'b1;
             sw_stable_current <= 1'b1;
         end
