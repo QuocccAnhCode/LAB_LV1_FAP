@@ -28,15 +28,12 @@ module tb_Lab3;
         
         #20 rst = 1; // Tắt reset sau 20ns
         
-        // Thao tác 1: Nhấn nút (sw = 1) và giữ một lúc
         #20 sw = 1;
-        #50 sw = 0; // Nhả nút (tại đây mạch sẽ phát hiện cạnh xuống và toggle LED)
-        
-        // Thao tác 2: Nhấn nút lại
+        #50 sw = 0; 
         #50 sw = 1;
-        #50 sw = 0; // Nhả nút lần 2
+        #50 sw = 0
         #50 
-        // $finish;
+
         $stop;
     end
 
