@@ -23,10 +23,10 @@ module tb_Lab3;
     initial begin
         // Khởi tạo ban đầu
         clk = 0;
-        rst = 1;
+        rst = 0;
         sw  = 0;
         
-        #20 rst = 0; // Tắt reset sau 20ns
+        #20 rst = 1; // Tắt reset sau 20ns
         
         // Thao tác 1: Nhấn nút (sw = 1) và giữ một lúc
         #20 sw = 1;
